@@ -34,6 +34,17 @@ public class IntArrayWorker
 				return total;
 			}
 		
+		
+		public int getColTotal(int col)
+		{
+			int colTotal = 0;
+			for(int row = 0; row < matrix.length; row++)
+				{
+					colTotal = colTotal + matrix[row][col];
+				}
+			return colTotal;
+		}
+		
 		/**
 		 * Method to return total times a value is matched
 		 * @param numberToFind value to match
