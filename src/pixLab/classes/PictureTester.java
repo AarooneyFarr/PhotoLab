@@ -36,6 +36,22 @@ public class PictureTester
 	  
   }
   
+  public static void testMirrorDiagonal()
+  {
+	  Picture koala = new Picture("koala.jpg");
+	  koala.explore();
+	  koala.mirrorDiagonal();
+	  koala.explore();
+  }
+  
+  public static void testMirrorDiagonalBottomToLeft()
+	  {
+		  Picture koala = new Picture("koala.jpg");
+		  koala.explore();
+		  koala.mirrorDiagonalBottomToLeft();
+		  koala.explore();
+	  }
+  
   public static void testMirrorHorizontalBottomToTop()
 	  {
 		  Picture koala = new Picture("koala.jpg");
@@ -66,9 +82,16 @@ public class PictureTester
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
-    swan.edgeDetection(10);
+    swan.edgeDetection(15);
     swan.explore();
   }
+  
+  public static void testEdgeDetection2()
+	  {
+	    Picture swan = new Picture("wall.jpg");
+	    swan.edgeDetection2(15);
+	    swan.explore();
+	  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -101,5 +124,7 @@ public class PictureTester
     //testGetAverageForColumn(0);
 	//testMirrorVerticalRightToLeft();
 	//testMirrorHorizontalBottomToTop();
+	//testMirrorDiagonal();
+	//testMirrorDiagonalBottomToLeft();
   }
 }
