@@ -48,7 +48,7 @@ public class PictureTester
 	  {
 		  Picture koala = new Picture("koala.jpg");
 		  koala.explore();
-		  koala.mirrorDiagonalBottomToLeft();
+		  koala.mirrorDiagonalTopLeftToBottomRight();
 		  koala.explore();
 	  }
   
@@ -84,6 +84,14 @@ public class PictureTester
     Picture swan = new Picture("swan.jpg");
     swan.edgeDetection(15);
     swan.explore();
+  }
+  
+  public static void testRandomPixel()
+  {
+	  Picture koala = new Picture("CumberlandIsland.jpg");
+	  koala.explore();
+	  koala.randomPixel();
+	  koala.explore();
   }
   
   public static void testEdgeDetection2()
@@ -126,5 +134,6 @@ public class PictureTester
 	//testMirrorHorizontalBottomToTop();
 	//testMirrorDiagonal();
 	//testMirrorDiagonalBottomToLeft();
+	  testRandomPixel();
   }
 }
