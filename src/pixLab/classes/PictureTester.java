@@ -94,6 +94,23 @@ public class PictureTester
 	  koala.explore();
   }
   
+  public static void testNegate()
+  {
+	  Picture motorcycle = new Picture("blueMotorcycle.jpg");
+	  motorcycle.explore();
+	  motorcycle.negate();
+	  
+	  motorcycle.explore();
+  }
+  public static void testGrayscale()
+  {
+	  Picture motorcycle = new Picture("blueMotorcycle.jpg");
+	  motorcycle.explore();
+	  motorcycle.grayScale();
+	  
+	  motorcycle.explore();
+  }
+  
   public static void testEdgeDetection2()
 	  {
 	    Picture swan = new Picture("wall.jpg");
@@ -134,6 +151,7 @@ public class PictureTester
 	//testMirrorHorizontalBottomToTop();
 	//testMirrorDiagonal();
 	//testMirrorDiagonalBottomToLeft();
-	  testRandomPixel();
+    //testRandomPixel();
+	
   }
 }
