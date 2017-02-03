@@ -513,10 +513,14 @@ public class Picture extends SimplePicture
 		 */
 		public static void main(String[] args)
 			{
-				Picture beach = new Picture("seagull.jpg");
-				beach.explore();
-				beach.mirrorGull();
-				beach.explore();
+				Picture isle = new Picture("cumberlandIsland.jpg");
+				isle.explore();
+				isle.mirrorDiagonal();
+				isle.funky();
+				isle.mirrorDiagonal();
+				isle.randomPixel();
+				isle.negate();
+				isle.explore();
 			}
 
 	} // this } is the end of class Picture, put all new methods before this
