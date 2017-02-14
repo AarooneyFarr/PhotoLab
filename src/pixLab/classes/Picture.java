@@ -425,6 +425,15 @@ public class Picture extends SimplePicture
 							}
 					}
 			}
+		
+		public void glitchArt(Picture pic)
+		{
+			pic.randomPixel();
+			pic.negate();
+			pic.funky();
+			pic.mirrorHorizontalBottomToTop();
+			
+		}
 
 		public void randomPixel()
 			{
@@ -505,6 +514,22 @@ public class Picture extends SimplePicture
 					}
 
 			}
+		
+		public void valentinesMeme()
+		{
+			Picture canvas = new Picture("blackCanvas.png");
+			Picture happyGroup = new Picture("welcome.jpeg");
+			Picture condescending = new Picture("condescending.jpeg");
+			canvas.addMessage("When you tell your friends", 10, 245, Color.WHITE, 20);
+			canvas.addMessage("When you tell your family", 10, 450, Color.WHITE, 20);
+			canvas.addMessage("Finally got a Valentine", 30, 30, Color.WHITE, 20);
+			
+			canvas.copy(happyGroup,40,10);
+			canvas.copy(condescending, 250, 0);
+			
+			canvas.explore();
+			canvas.write("valentines.png");
+		}
 
 
 
@@ -513,14 +538,8 @@ public class Picture extends SimplePicture
 		 */
 		public static void main(String[] args)
 			{
-				Picture isle = new Picture("cumberlandIsland.jpg");
-				isle.explore();
-				isle.mirrorDiagonal();
-				isle.funky();
-				isle.mirrorDiagonal();
-				isle.randomPixel();
-				isle.negate();
-				isle.explore();
+				
+				
 			}
 
 	} // this } is the end of class Picture, put all new methods before this

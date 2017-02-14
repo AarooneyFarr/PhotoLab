@@ -93,6 +93,14 @@ public class PictureTester
 				koala.randomPixel();
 				koala.explore();
 			}
+		
+		public static void testGlitchArt()
+			{
+				Picture koala = new Picture("CumberlandIsland.jpg");
+				koala.explore();
+				koala.glitchArt(koala);
+				koala.explore();
+			}
 
 		public static void testNegate()
 			{
@@ -162,8 +170,8 @@ public class PictureTester
 				// testMirrorArms();
 				// testMirrorGull();
 				// testMirrorDiagonal();
-				//testCollage();
-				//testCopy();
+				// testCollage();
+				// testCopy();
 				// testEdgeDetection();
 				// testEdgeDetection2();
 				// testChromakey();
@@ -177,6 +185,7 @@ public class PictureTester
 				// testMirrorDiagonal();
 				// testMirrorDiagonalBottomToLeft();
 				// testRandomPixel();
-				//testFunky();
+				// testFunky();
+				testGlitchArt();
 			}
 	}
