@@ -530,15 +530,93 @@ public class Picture extends SimplePicture
 			canvas.explore();
 			canvas.write("valentines.png");
 		}
+		
+		public void encode(Picture hiddenPicture)
+		{
+			Pixel [][] currentPicture = this.getPixels2D();
+			Pixel [][] hiddenData = hiddenPicture.getPixels2D();
+			
+				Pixel hiddenPixel = null;
+				Pixel currentPixel = null;
+				
+				for(int row = 0; row < currentPicture.length; row++)
+					{
+						for(int col = 0; col < currentPicture[0].length; col++)
+							{
+								hiddenPixel = hiddenData[row][col];
+								currentPixel = currentPicture[row][col];
+								
+								if(hiddenPixel.getRed() == 255 && hiddenPixel.getBlue() == 255 && hiddenPixel.getGreen() == 255)
+									{
+										int currentRed = currentPixel.getRed();
+										if(currentRed % 2 == 0)
+											{
+												currentPixel.setRed(currentRed + 1);
+											}
+									}
+								else
+									{
+										int currentRed = currentPixel.getRed();
+										if(currentRed % 2 != 0 )
+											{
+												currentPixel.setRed(currentRed - 1);
+												
+												
+											}
+										
+										
+									}
+								
+							}
+						
+					}
+				
+		}
 
 
+		public void decode()
+		{
+			Pixel[][] decoded = this.getPixels2D();
+			Pixel currentPixel = null;
+			
+			for(int row = 0; row < decoded.length; row++)
+				{
+					for(int col = 0; col < decoded[0].length; col++)
+						{
+							
+							currentPixel = decoded[row][col];
+							int currentRed = currentPixel.getRed();
+							if(currentRed % 2 == 0)
+								{
+									currentPixel.setColor(new Color(127,255,0));
+								}
+							else
+								{
+									currentPixel.setColor(Color.WHITE);
+									
+									
+								}
+							
+						}
+					
+				}
+			
+			
+		}
 
 		/*
 		 * Main method for testing - each class in Java can have a main method
 		 */
 		public static void main(String[] args)
 			{
+				Picture test = new Picture("chrome.jpg");
+				Picture hidden = new Picture("quote.jpg");
 				
+				test.explore();
+				test.encode(hidden);
+				test.explore();
+				test.decode();
+				test.explore();
 				
 			}
 
