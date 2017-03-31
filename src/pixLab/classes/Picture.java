@@ -603,20 +603,52 @@ public class Picture extends SimplePicture
 			
 			
 		}
+		
+		public void chromakey(Picture background)
+		{
+			Pixel[][] base = this.getPixels2D();
+			Pixel[][] backgroundPic = background.getPixels2D();
+			Pixel currentPixel = null;
+			
+			for(int row = 0; row < base.length; row++)
+				{
+					for(int col = 0; col < base[0].length; col++)
+						{
+							currentPixel = base[row][col];
+							
+							if(currentPixel.getGreen() > currentPixel.getBlue() && currentPixel.getGreen() > currentPixel.getRed())
+								{
+									try{
+										
+									
+									base[row][col].setColor(backgroundPic[row][col].getColor());
+									}
+									catch(ArrayIndexOutOfBoundsException e)
+										{
+											
+											
+										}
+									
+								}
+							
+						}
+					
+				}
+			
+		}
 
 		/*
 		 * Main method for testing - each class in Java can have a main method
 		 */
 		public static void main(String[] args)
 			{
-				Picture test = new Picture("chrome.jpg");
+				Picture base = new Picture("greenscreen.jpg");
 				Picture hidden = new Picture("quote.jpg");
 				
-				test.explore();
-				test.encode(hidden);
-				test.explore();
-				test.decode();
-				test.explore();
+				base.explore();
+				base.chromakey(hidden);
+				base.explore();
+				
 				
 			}
 
